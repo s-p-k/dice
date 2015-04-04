@@ -32,19 +32,12 @@
 
 (define compare-results
   (lambda (n1 n2)
-    (cond ((eq? n1 n2)
-	   (begin (display "It's a draw.")
-		  (newline)
-		  (display (random-element lose-quotes))))
-	  ((> n1 n2)
-	   (begin (display "Computer wins.")
-		  (newline)
-		  (display (random-element lose-quotes))))
-	  (else (begin
-		  (display "Player wins.")
-		  (newline)
-		  (display (random-element win-quotes)))))
-    (newline)))
+    (cond ((eq? n1 n2) (format #t "It's a draw.~%~A~%"
+			       (random-element lose-quotes)))
+	  ((> n1 n2) (format #t "Computer wins.~%~A~%"
+			     (random-element lose-quotes)))
+	  (else (format #t "Player wins.~%~A~%"
+			(random-element win-quotes))))))
 
 ;; roll the dice for a player
 
