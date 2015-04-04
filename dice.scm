@@ -1,7 +1,6 @@
 ;;;; See LICENSE file for details.
 ;;;; A small dice game I wrote for fun.
 
-
 ;; get a random element from a list
 
 (define (random-element lst)
